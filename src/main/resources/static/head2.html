@@ -1,0 +1,84 @@
+<!--
+ * @Author: 张超
+ * @Date: 2020-10-20 20:12:02
+ * @LastFileTime: Do not edit
+ * @FilePath: \html\html2020\比赛1\head2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>head</title>
+</head>
+<body>
+    <style>
+        .top{
+            width: 1000px;
+            height: 50px;
+        }
+        .left{
+            padding-top: 10px;
+            padding-left: 50px;
+            float: left;
+            width: 150px;
+            height: 50px;
+        }
+        .center{
+            float: left;
+            margin-left: 150px;
+            width: 600px;
+            height: 50px;
+        }
+        .center ul{
+            list-style-type: none;  
+        }
+        .center li{
+            margin-top: -3px;
+            float: left;
+            width: 90px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-radius:10px;
+        }
+        .center li:hover{
+            border-bottom: 3px solid red;
+        }
+        .center a{
+            text-decoration: none;
+            color: #6c6c6c;
+        }
+        .center a:hover{
+            color: red;
+        }
+        .asty{
+            background-color: rgb(244, 191, 255);
+        }   
+    </style>
+    <body>
+        <div class="top">
+            <div class="center">
+                <ul>
+                    <li><a href="/index" target="_top">首页</a></li>
+                    <li class="asty"><a href="/transferFoot2" target="foot">决赛</a></li>
+                    <li><a href="/transferScore?family=2&levels=1" target="foot">低年级组</a></li>
+                    <li><a href="/transferScore?family=2&levels=2" target="foot">高年级组</a></li>
+                    <li><a href="/transferScore?family=2&levels=3" target="foot">研究生组</a></li>
+                    <li><a href="/transferShowchoice?family=2" target="foot">显示成绩</a></li>
+                </ul>
+            </div>
+        </div>
+</body>
+</html>
+<script>
+    var lis=document.getElementsByTagName("li");
+    for(var i=0;i<lis.length;i++){
+        lis[i].onclick=function(){
+            for(var j=0;j<lis.length;j++){
+               lis[j].className="";
+            }
+            this.className="asty";
+        }
+    }
+</script>

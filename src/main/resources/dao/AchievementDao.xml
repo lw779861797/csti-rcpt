@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cstiweb.rcpt.dao.AchievementDao">
+    <resultMap id="BaseResultMap" type="com.cstiweb.rcpt.model.Achievement">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="player_relation_id" jdbcType="INTEGER" property="playerRelationId" />
+        <result column="grade" jdbcType="DECIMAL" property="grade" />
+        <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    </resultMap>
+    <select id="query" resultMap="BaseResultMap">
+        select a.*
+        from question_relation q,player_question_type_relation p,achievement a
+        where q.name = #{questionName} and q.levels = #{levels} and q.family = #{family}
+        and q.id = p.question_type_id and p.player_id = #{playerID} and p.id = a.player_relation_id
+        and q.is_delete = 0 and p.is_delete = 0 and a.is_delete = 0
+    </select>
+</mapper>

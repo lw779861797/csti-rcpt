@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center">
+    <input type="text" placeholder="输入选手年级" id="levels"/><br>
+    <input style="width: 100px" type="submit" onclick="f()">
+</div>
+</body>
+<script>
+    function f() {
+        var levels = document.getElementById("levels").value;
+        if(levels == null || levels.length == 0){
+            alert("年级不能为空");
+            return ;
+        }
+        $.post(
+            "/delete",
+            {"levels":levels},
+            function (data) {
+                alert(data.message);
+                window.location.reload();
+            }
+        );
+    }
+</script>
+<script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
+</html>

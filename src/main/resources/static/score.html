@@ -1,0 +1,330 @@
+<!--
+ * @Author: 张超
+ * @Date: 2020-10-21 18:35:44
+ * @LastFileTime: Do not edit
+ * @FilePath: \html\html2020\比赛1\score.html
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: linear-gradient(-130deg,#f3b4e5,#63e0e4);  
+        }
+        #content{
+            width:100%;
+            height: 650px;
+            margin: 0 auto;
+            /* background-color: blue; */
+            margin-top: 20px;
+        }
+        .teacher{
+            width: 90%;
+            height:350px;
+            margin: 0 auto;
+            /* background-color: blueviolet; */
+            display: flex;
+            flex-direction:row;
+            justify-content: space-around;
+        }
+        .tea{
+            width:160px;
+            height: 100%;
+            /* padding: 10px; */
+            /* border: 1px solid black; */
+            /* overflow: hidden; */
+        }
+        .te{
+            padding: 10px;
+            padding-top: 20px;
+            border: 1px solid black;
+        }
+        .tea img{
+            width: 100%;
+            height:300px;
+            /* height:250px; */
+        }
+        .tea p{
+            font-size:22px;
+            text-align: center;
+            /* margin-top: 20px; */
+        }
+        .tea input{
+            width:80px;
+            height:50px;
+            border-radius:5px;
+            font-size: 30px;
+            /* border: none; */
+            position: relative;
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%);
+            outline: none;
+            cursor:text;
+            border: 1px solid #ccc;
+            padding: 7px 0px;
+            border-radius: 3px;
+            padding-left:5px;
+            position: relative;
+            top: 20px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        }
+        .tea input:hover{
+            border-color: #66afe9;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+        }
+        .bot{
+            width: 90%;
+            height:200px;
+            /* background-color:rebeccapurple; */
+            margin: 0 auto;
+            margin-top: 50px;
+            /* overflow: hidden; */
+        }
+        .ser{
+            width: 60%;
+            height: 60px;
+            text-align: center;
+            margin: 0 auto;
+            /* background-color: rgb(138, 68, 68); */
+            display: flex;
+            justify-content: space-around;
+        }
+        .ser span{
+            font-size: 30px;
+            line-height: 40px;
+        }
+        .show{
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .show span{
+            font-size:40px;
+        }
+        .sub{
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            
+        }
+        .sub input{
+            width: 200px;
+            height: 40px;
+            border-radius: 5px;
+            font-size: 25px;
+            background: none;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        .in{
+            text-align: center;
+        }
+        #questionName{
+            width: 150px;
+            height: 50px;
+        }
+        #questionName option{
+            width: 150px;
+            height: 50px;
+        }
+        #playerID{
+            width: 150px;
+            height: 50px;
+            /* position: absolute;
+            top:62% */
+        }
+        #span2{
+            font-size: 80px;
+            color: red;
+        }
+        #isCheck{
+            /* position: absolute;
+            top: 30px; */
+        }
+    </style>
+    <title>成绩</title>
+</head>
+<body>
+    <div id="content">
+        <div class="teacher">
+            <div class="tea">
+                <div class="te">
+                    <img src="./董玲.jpg" alt="" class="im">
+                    <p>董玲</p>
+                </div>
+                <input type="text" name="" id="3" class="in">
+            </div>
+            <div class="tea">
+                <div class="te">
+                    <img src="./杨可.jpg" alt="" class="im">
+                    <p>杨可</p>
+                </div>
+                <input type="text" name="" id="6" class="in">
+            </div>
+            <div class="tea">
+                <div class="te">
+                    <img src="./戴桂菊.jpg" alt="" class="im">
+                    <p>戴桂菊</p>
+                </div>
+                <input type="text" name="" id="2" class="in">
+            </div>
+            <div class="tea" >
+                <div class="te">
+                    <img src="./王松亭.jpg" alt="" class="im">
+                    <p>王松亭</p>
+                </div>
+                <input type="text" name="" id="1" class="in">
+            </div>
+            <div class="tea">
+                <div class="te">
+                    <img src="./许宏.jpg" alt="" class="im">
+                    <p>许宏</p>
+                </div>
+                <input type="text" name="" id="5" class="in">
+            </div>
+            <div class="tea">
+                <div class="te">
+                    <img src="./孙超.jpg" alt="" class="im">
+                    <p>孙超</p>
+                </div>
+                <input type="text" name="" id="4" class="in">
+            </div>
+            <div class="tea">
+                <div class="te">
+                    <img src="./张俊翔.jpg" alt="" class="im">
+                    <p>张俊翔</p>
+                </div>
+                <input type="text" name="" id="7" class="in">
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="bot">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="ser">
+                <span>输入选手编号</span>
+                <input type="text" name="playerID" id="playerID">
+                
+                <select id="questionName" >
+                    <div th:each="relation : ${questionRelations}">
+                        <option th:value="${relation.name}" th:text="${relation.name}"></option>
+                    </div>
+                </select>
+                <input type="checkbox" name="" id="isCheck" style="width: 50px;height: 50px;">
+            </div>
+            <div class="sub">
+                <input type="button" value="提交" id="del" >
+                <input type="button" value="刷新" id="refresh">
+            </div>
+            <div class="show">
+                <span id="span1"></span><span>同学的平均成绩是</span><span id="span2"></span>
+                <br>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" th:value="${family}" id="family">
+    <input type="hidden" th:value="${levels}" id="levels">
+</body>
+</html>
+<script>
+    var flag=0;
+    var del=document.getElementById("del");
+    var refresh=document.getElementById("refresh");
+    refresh.onclick=function(){
+        flag=0;
+        window.location.reload();
+    };
+    del.onclick=function(){
+        if(flag==1){
+            alert("正在提交");
+            return;
+        }
+        flag=1;
+
+        var tea=document.getElementsByClassName("im");
+        var scores=document.getElementsByClassName("in");
+        var sc=[];
+        var check=document.getElementById("isCheck");
+        if(!check.checked){
+            alert("未选中");
+            return;
+        }
+        for(var i=0;i<scores.length;i++){
+            sc.push(parseFloat(scores[i].value));
+            if(scores[i].value==""){
+                alert("数据未输入完整");
+                return;
+            }
+        }
+        console.log(sc);
+        var max=sc[0];
+        var min=sc[0];
+        var flagmax=0;
+        var flagmin=0;
+        for(var i=1;i<sc.length;i++){
+            if(max<sc[i]){
+                max=sc[i];
+                flagmax=i;
+            }
+            if(min>sc[i]){
+                min=sc[i];
+                flagmin=i;
+            }
+        }
+        scores[flagmax].style.color="red";
+        scores[flagmin].style.color="red";
+        tea[flagmax].style.opacity="0.2";
+        tea[flagmin].style.opacity="0.2";
+        for(var i=0;i<scores.length;i++){
+            scores[i].style.type="button";
+            scores[i].style.border="none";
+        }
+        var playerID = document.getElementById("playerID").value;
+        var family = document.getElementById("family").value;
+        var levels = document.getElementById("levels").value;
+        var questionName = document.getElementById("questionName").value;
+        if(playerID == null || playerID.length == 0){
+            alert("选手编号为空！");
+            return ;
+        }
+        console.log(playerID);
+        console.log(family);
+        console.log(levels);
+        console.log(questionName);
+        for(var i = 0;i < scores.length;i++){
+            console.log(sc[i]);
+        }
+        $.ajax({
+            type: "POST",
+            contentType: "application/json;charset=UTF-8",
+            url: "/submitScore",
+            data: JSON.stringify({"family": family, "levels": levels,"scores": sc,"playerID": playerID,"questionName": questionName}),
+            dataType: 'json',
+            success: function(data) {
+                if(data.code == 500){
+                    alert(data.message);
+                    return;
+                }
+                document.getElementById("span1").innerText = data.data.playerName;
+                document.getElementById("span2").innerText = data.data.score;
+            }
+        });
+    }
+    
+</script>
+<script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>

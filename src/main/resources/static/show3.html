@@ -1,0 +1,53 @@
+<!--
+ * @Author: 张超
+ * @Date: 2020-10-21 19:43:11
+ * @LastFileTime: Do not edit
+ * @FilePath: \html\html2020\比赛1\show1.html
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>低年级</title>
+    <style>
+        table{
+            width: 1000px;
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            margin: 0 auto;
+            border-spacing: 0;
+        }
+        table td{
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>名次</td>
+        <td>选手编号</td>
+        <td>姓名</td>
+        <td>初赛25%</td>
+        <td>命题演讲20%</td>
+        <td>口语表述15%</td>
+        <td>俄汉双向翻译20%</td>
+        <td>阅读俄语篇章并用汉语阐释观点20%</td>
+        <td>总分100分</td>
+    </tr>
+    <tr th:each="playerSeniorVo : ${playerSeniorVos}">
+        <td th:text="${playerSeniorVo.ranking}"></td>
+        <td th:text="${playerSeniorVo.id}"></td>
+        <td th:text="${playerSeniorVo.name}"></td>
+        <td th:text="${playerSeniorVo.preContest}"></td>
+        <td th:text="${playerSeniorVo.speech}"></td>
+        <td th:text="${playerSeniorVo.spoken}"></td>
+        <td th:text="${playerSeniorVo.translation}"></td>
+        <td th:text="${playerSeniorVo.constant}"></td>
+        <td th:text="${playerSeniorVo.sum}"></td>
+    </tr>
+</table>
+</body>
+</html>

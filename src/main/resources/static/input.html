@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center">
+    <input type="text" placeholder="输入选手编号" id="playerID"/><br>
+    <input type="text" placeholder="输入选手姓名" id="name"><br>
+    <input type="text" placeholder="输入选手年级" id="levels"/><br>
+    <input type="text" placeholder="输入选手初选成绩" id="preContest"/>
+    <input style="width: 100px" type="submit" onclick="f()">
+</div>
+</body>
+<script>
+    function f() {
+        var playerID = document.getElementById("playerID").value;
+        var name = document.getElementById("name").value;
+        var levels = document.getElementById("levels").value;
+        var preContest = document.getElementById("preContest").value;
+        if(playerID == null || playerID.length == 0){
+            alert("编号不能为空");
+            return ;
+        }
+        if(name == null || name.length == 0){
+            alert("名字不能为空");
+            return ;
+        }
+        if(levels == null || levels.length == 0){
+            alert("年级不能为空");
+            return ;
+        }
+        if(preContest == null || preContest.length == 0){
+            alert("初选成绩不能为空");
+            return ;
+        }
+        $.post(
+            "/insert",
+            {"playerID":playerID,"name":name,"levels":levels,"preContest":preContest},
+            function (data) {
+                alert(data.message);
+                window.location.reload();
+            }
+        );
+    }
+</script>
+<script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
+</html>
